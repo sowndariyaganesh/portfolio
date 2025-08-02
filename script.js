@@ -47,3 +47,28 @@ document.addEventListener("DOMContentLoaded", () => {
   typeRole();
 });
 
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("show");
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function(event) {
+    const menu = document.getElementById("navMenu");
+    const hamburger = document.querySelector(".hamburger");
+
+    if (
+      !menu.contains(event.target) &&
+      !hamburger.contains(event.target)
+    ) {
+      menu.classList.remove("show");
+    }
+  });
+
+
+
+ 
